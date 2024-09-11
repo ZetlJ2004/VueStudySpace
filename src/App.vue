@@ -10,15 +10,12 @@ SidebarView
   <RouterView />
 </template>
 <style>
+html,
+body,
 #app {
   display: flex;
-}
-#sidebar {
-  border: 1px solid red;
-  min-width: 200px;
-}
-#main {
-  border: 1px solid red;
-  flex: 1;
+  margin: 0;
+  padding: 0px;
+  height: 100%;
 }
 </style>
