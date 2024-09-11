@@ -45,99 +45,99 @@
     </ul>
     <h3>Form Input Bindings</h3>
     <ul>
-      <li><router-link to="/example07-1">v-model</router-link></li>
-      <li><router-link to="/example07-2">Examples</router-link></li>
+      <li><router-link to="/exa07-1">v-model</router-link></li>
+      <li><router-link to="/exa07-2">Examples</router-link></li>
     </ul>
     <h3>Component</h3>
     <ul>
-      <li><router-link to="/example06-1">Async Component</router-link></li>
-      <li><router-link to="/example06-2">keep-alive</router-link></li>
+      <li><router-link to="/exa06-1">Async Component</router-link></li>
+      <li><router-link to="/exa06-2">keep-alive</router-link></li>
     </ul>
     <h3>Global Store</h3>
     <ul>
       <li>
-        <router-link to="/example08-1">State</router-link>
+        <router-link to="/exa08-1">State</router-link>
       </li>
       <li>
-        <router-link to="/example08-2">Actions</router-link>
+        <router-link to="/exa08-2">Actions</router-link>
       </li>
       <li>
-        <router-link to="/example08-3">Getters</router-link>
+        <router-link to="/exa08-3">Getters</router-link>
       </li>
       <li>
-        <router-link to="/example08-4">Define Custom Global Store</router-link>
+        <router-link to="/exa08-4">Define Custom Global Store</router-link>
       </li>
     </ul>
     <h3>Passing Data to Child Component</h3>
     <ul>
       <li>
-        <router-link to="/example09-1">defineProps()</router-link>
+        <router-link to="/exa09-1">defineProps()</router-link>
       </li>
       <li>
-        <router-link to="/example09-4">Passing Functions</router-link>
+        <router-link to="/exa09-4">Passing Functions</router-link>
       </li>
       <li>
-        <router-link to="/example09-5">defineModel()</router-link>
+        <router-link to="/exa09-5">defineModel()</router-link>
       </li>
       <li>
-        <router-link to="/example09-3">defineExpose()</router-link>
+        <router-link to="/exa09-3">defineExpose()</router-link>
       </li>
       <li>
-        <router-link to="/example09-2">defineEmits()</router-link>
+        <router-link to="/exa09-2">defineEmits()</router-link>
       </li>
     </ul>
     <h3>Network</h3>
     <ul>
       <li>
-        <router-link to="/example10-1">VueUse useFetch</router-link>
+        <router-link to="/exa10-1">VueUse useFetch</router-link>
       </li>
       <li>
-        <router-link to="/example11-1">Mock & mriage</router-link>
+        <router-link to="/exa11-1">Mock & mriage</router-link>
       </li>
       <li>
-        <router-link to="/example11-2">Login</router-link>
+        <router-link to="/exa11-2">Login</router-link>
       </li>
       <li>
-        <router-link to="/example11-3">URL passing json params</router-link>
+        <router-link to="/exa11-3">URL passing json params</router-link>
       </li>
     </ul>
     <h3>Nested Routes</h3>
     <ul>
       <li>
-        <router-link to="/example12-1">Nested Routes</router-link>
+        <router-link to="/exa12-1">Nested Routes</router-link>
       </li>
     </ul>
     <h3>Navigation Guards</h3>
     <ul>
       <li>
-        <router-link to="/example13/login">Navigation Guards</router-link>
+        <router-link to="/exa13-1/login">Navigation Guards</router-link>
       </li>
     </ul>
     <h3>Loading Components</h3>
     <ul>
       <li>
-        <router-link to="/example15">suspense</router-link>
+        <router-link to="/exa15-1">suspense</router-link>
       </li>
       <li>
-        <router-link to="/example15-2">component/v-if</router-link>
+        <router-link to="/exa15-2">component/v-if</router-link>
       </li>
     </ul>
     <h3>Slots</h3>
     <ul>
       <li>
-        <router-link to="/example16">Slots</router-link>
+        <router-link to="/exa16">Slots</router-link>
       </li>
     </ul>
     <h3>Functional Components</h3>
     <ul>
       <li>
-        <router-link to="/example17">Functional Components</router-link>
+        <router-link to="/exa17">Functional Components</router-link>
       </li>
     </ul>
     <h3>Decorators</h3>
     <ul>
       <li>
-        <router-link to="/example18">Decorators</router-link>
+        <router-link to="/exa18">Decorators</router-link>
       </li>
     </ul>
     <h3>Proxy</h3>
