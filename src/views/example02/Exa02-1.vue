@@ -100,6 +100,7 @@ watch(userRef, () => alert(`watch被激活。用户对象改变`))
 
 const changeUserRef2 = () => {
   setTimeout(() => {
+    messageRef.value = 'OKO'
     userRef.value.name = 'ZHOU'
   }, 1000)
 }
