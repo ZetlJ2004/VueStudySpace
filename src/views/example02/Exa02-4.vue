@@ -1,19 +1,27 @@
 <script setup lang="ts">
 import type { Course } from '@/type'
-import { ref, shallowRef } from 'vue'
+import { reactive, shallowRef, watch } from 'vue'
 const course: Course = { id: 10, name: 'Java' }
+const courseX: Course = { id: 10, name: 'Vue' }
 const courseR = shallowRef<Course>(course)
-const courseR2 = ref<Course>(course)
+let courseR2 = reactive(course)
 console.log(courseR)
 console.log(courseR2)
 // 更新shallowRef中响应式对象的引用，响应式
 const getCourseF = () => {
-  courseR.value = course
+  courseR.value = courseX
 }
 // 更新shallowRef中响应式对象的属性值，非响应式
 const updateCourseF = () => {
-  courseR.value && (courseR.value.name = 'web')
+  courseR2.name = 'web'
 }
+watch(courseR, () => alert(`watch1被激活。用户对象改变`))
+watch(
+  () => courseR2.name,
+  () => {
+    alert('watch2被激活。用户对象的name属性改变')
+  }
+)
 </script>
 <template>
   <div>
@@ -25,12 +33,13 @@ const updateCourseF = () => {
       <br />
       shallowRef()创建的响应式对象更轻量，适合渲染大量`静态`数据。例如后端返回的仅用于渲染而非修改的数据
     </p>
-    <p>
-      <button @click="getCourseF">更新shallowRef中响应式对象的引用，响应式</button>
-      <button @click="updateCourseF">更新shallowRef中响应式对象的属性值，非响应式</button>
-      <br />
-      {{ courseR?.name }}
-      <br />
-    </p>
+    <button @click="getCourseF">更新shallowRef中响应式对象的引用，响应式</button>
+    <br />
+    <button @click="updateCourseF">更新shallowRef中响应式对象的属性值，非响应式</button>
+    <br />
+    {{ courseR?.name }}
+    <hr />
+    {{ courseR2?.name }}
+    <br />
   </div>
 </template>
