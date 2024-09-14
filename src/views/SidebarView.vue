@@ -110,7 +110,7 @@
     <h3>Navigation Guards</h3>
     <ul>
       <li>
-        <router-link to="/exa13-1/login">Navigation Guards</router-link>
+        <router-link to="/exa13/login">Navigation Guards</router-link>
       </li>
     </ul>
     <h3>Loading Components</h3>

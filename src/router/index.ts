@@ -1,5 +1,5 @@
+import * as consty from '@/datasource/Const'
 import { createRouter, createWebHashHistory, type RouteRecordRaw } from 'vue-router'
-
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
@@ -139,6 +139,36 @@ const routes: RouteRecordRaw[] = [
           default: () => import('@/views/example12/CourseHomework.vue'),
           button: () => import('@/views/example12/AddHomeworkButton.vue')
         }
+      }
+    ]
+  },
+  {
+    path: '/exa13',
+    component: () => import('@/views/example13/GuardContainer.vue'),
+    children: [
+      {
+        name: 'login-g',
+        path: 'login',
+        component: () => import('@/views/example13/GuardLogin.vue')
+      },
+      {
+        path: 'user',
+        component: () => import('@/views/example13/GuardUser.vue'),
+        meta: {
+          role: consty.USER
+        }
+      },
+      {
+        path: 'admin',
+        component: () => import('@/views/example13/GuardAdmin.vue'),
+        meta: {
+          role: consty.ADMIN
+        }
+      },
+      {
+        name: 'nomatch',
+        path: ':pathMatch(.*)*', // 如果是全局匹配，应加上`/`，/:pathMatch(.*)*
+        redirect: { name: 'login-g' }
       }
     ]
   }
