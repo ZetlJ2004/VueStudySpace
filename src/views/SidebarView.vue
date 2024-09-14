@@ -176,4 +176,7 @@
 * {
   margin: 0;
 }
+div {
+  overflow-y: auto;
+}
 </style>

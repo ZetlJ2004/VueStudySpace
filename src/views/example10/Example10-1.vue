@@ -11,7 +11,7 @@
       <br />
       login: {{ userR?.login }}
       <br />
-      company: {{ userR?.company }}
+      location: {{ userR?.location }}
       <br />
       repos_url:
       <!-- :to="{ name: 'example09-02', query: { url: user.repos_url } }" -->

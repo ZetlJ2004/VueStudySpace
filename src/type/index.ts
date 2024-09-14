@@ -29,6 +29,7 @@ export interface GithubUser {
   login?: string
   avatar_url?: string
   url?: string
+  location?: string
 }
 
 export interface GithubRepos {

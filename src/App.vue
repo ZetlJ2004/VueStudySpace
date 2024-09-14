@@ -7,7 +7,9 @@ SidebarView
 
 <template>
   <SidebarView id="sidebar" />
-  <RouterView />
+  <div id="main">
+    <RouterView />
+  </div>
 </template>
 <style>
 html,
@@ -17,5 +19,13 @@ body,
   margin: 0;
   padding: 0px;
   height: 100%;
+}
+#sidebar {
+  width: 470px;
+  background-color: #f4f4f4;
+}
+#main {
+  flex: 1;
+  padding: 10px;
 }
 </style>
