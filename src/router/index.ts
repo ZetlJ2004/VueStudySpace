@@ -1,3 +1,4 @@
+import { createAlertDialog } from '@/components/message'
 import * as consty from '@/datasource/Const'
 import { createRouter, createWebHashHistory, type RouteRecordRaw } from 'vue-router'
 const routes: RouteRecordRaw[] = [
@@ -171,11 +172,33 @@ const routes: RouteRecordRaw[] = [
         redirect: { name: 'login-g' }
       }
     ]
+  },
+  {
+    path: '/exa15-1',
+    component: () => import('@/views/example15/Example15-1.vue')
+  },
+  {
+    path: '/exa15-2',
+    component: () => import('@/views/example15/Example15-2.vue')
   }
 ]
 const router = createRouter({
   history: createWebHashHistory(),
   routes
 })
+router.beforeEach((to, from) => {
+  // 排除，没有声明角色权限的路由
+  if (!to.meta.role) {
+    return true
+  }
 
+  if (to.meta.role != sessionStorage.getItem('role')) {
+    createAlertDialog('无权限')
+    // 直接返回路由地址
+    // return '/example13/login'
+    // 支持返回路由对象
+    return { name: 'login-g' }
+  }
+  return true
+})
 export default router
