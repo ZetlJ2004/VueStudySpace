@@ -15,6 +15,7 @@ listCoursesService2().then((r) => (activeR.value = r))
       可基于具体逻辑决定是否使用store中的缓存数据，或将数据传入子组件等。
     </p>
     <div>
+      <course-view2 />
       <component :is="activeR ? courseView2 : loadingVue" />
     </div>
     <!-- <div>

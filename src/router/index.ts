@@ -180,6 +180,24 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/exa15-2',
     component: () => import('@/views/example15/Example15-2.vue')
+  },
+  {
+    path: '/exa16',
+    component: () => import('@/views/example16/Example16View.vue')
+  },
+  {
+    path: '/exa17',
+    component: () => import('@/views/example17/Example17View.vue')
+  },
+  {
+    path: '/exa18',
+    component: () => import('@/views/example18/IndexView.vue'),
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/example18/Example18-1.vue')
+      }
+    ]
   }
 ]
 const router = createRouter({
