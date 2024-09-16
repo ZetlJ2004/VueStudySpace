@@ -203,6 +203,28 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/exp02',
     component: () => import('@/views/exp02/IndexView.vue')
+  },
+  {
+    path: '/exp03',
+    component: () => import('@/views/exp03/HomeView.vue'),
+    children: [
+      {
+        path: 'location',
+        component: () => import('@/views/exp03/LocationView.vue')
+      },
+      {
+        path: 'shoplist',
+        component: () => import('@/views/exp03/ShopListView.vue')
+      },
+      {
+        path: 'shops/:sid',
+        component: () => import('@/views/exp03/ShopView.vue')
+      },
+      {
+        path: 'orders',
+        component: () => import('@/views/exp03/OrderView.vue')
+      }
+    ]
   }
 ]
 const router = createRouter({
