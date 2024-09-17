@@ -233,6 +233,10 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/homework02',
     component: () => import('@/views/homework2/IndexView.vue')
+  },
+  {
+    path: '/homework04',
+    component: () => import('@/views/homework4/IndexView.vue')
   }
 ]
 const router = createRouter({
