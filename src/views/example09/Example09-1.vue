@@ -16,8 +16,8 @@
 </template>
 <script lang="ts" setup>
 import courseitem from './CourseItem1.vue'
-import { useExample09Store } from './Example09Store'
 import { listCoursesService } from './Example09Service'
+import { useExample09Store } from './Example09Store'
 // 组件发起业务处理请求
 listCoursesService()
 // 初始时，store中为空数组。

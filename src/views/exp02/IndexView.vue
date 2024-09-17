@@ -29,8 +29,8 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { listCourses, type Course } from './services'
 import { ref, watch } from 'vue'
+import { listCourses, type Course } from './services'
 
 const requiredPoint = 12
 const pointR = ref(0)
