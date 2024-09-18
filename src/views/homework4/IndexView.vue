@@ -11,12 +11,51 @@ const eDates = [6, 7]
 const dayCheckR = ref<ShortDate>({ wDate: false, eDate: false })
 const datesR = ref<number[]>([])
 // 当快捷选择
-const changeShortDateF = () => {
-  const dates = []
-  dayCheckR.value.wDate && dates.push(...wDates)
-  dayCheckR.value.eDate && dates.push(...eDates)
-  datesR.value = dates
+const changeShortDateW = () => {
+  // 先保留当前已选中的日期
+  const newDates = [...datesR.value]
+
+  // 如果选中了工作日快捷选择，检查并添加所有工作日
+  if (dayCheckR.value.wDate) {
+    wDates.forEach((date) => {
+      if (!newDates.includes(date)) {
+        newDates.push(date) // 只有不在 newDates 中时才添加
+      }
+    })
+  } else {
+    // 如果取消了工作日快捷选择，移除所有工作日
+    wDates.forEach((date) => {
+      const index = newDates.indexOf(date)
+      if (index !== -1) {
+        newDates.splice(index, 1)
+      }
+    })
+  }
+  datesR.value = newDates
 }
+const changeShortDateE = () => {
+  const newDates = [...datesR.value]
+  // 如果选中了周末快捷选择，检查并添加所有周末
+  if (dayCheckR.value.eDate) {
+    eDates.forEach((date) => {
+      if (!newDates.includes(date)) {
+        newDates.push(date) // 只有不在 newDates 中时才添加
+      }
+    })
+  } else {
+    // 如果取消了周末快捷选择，移除所有周末
+    eDates.forEach((date) => {
+      const index = newDates.indexOf(date)
+      if (index !== -1) {
+        newDates.splice(index, 1)
+      }
+    })
+  }
+
+  // 更新 datesR
+  datesR.value = newDates
+}
+
 // 当单独选择
 const changeDateF = () => {
   dayCheckR.value.wDate = wDates.every((date) => datesR.value.includes(date))
@@ -35,11 +74,11 @@ const changeDateF = () => {
     </p>
     <p>
       <label>
-        <input type="checkbox" v-model="dayCheckR.wDate" @change="changeShortDateF" />
+        <input type="checkbox" v-model="dayCheckR.wDate" @change="changeShortDateW" />
         工作日 |
       </label>
       <label>
-        <input type="checkbox" v-model="dayCheckR.eDate" @change="changeShortDateF" />
+        <input type="checkbox" v-model="dayCheckR.eDate" @change="changeShortDateE" />
         周末
       </label>
     </p>
